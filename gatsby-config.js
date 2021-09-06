@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 
 dotenv.config({ path: ".env" });
 
-const { CONTENTFUL_SPACEID, CONTENTFUL_ACCESS_TOKEN } = process.env;
+const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
 
 module.exports = {
   siteMetadata: {
@@ -23,7 +23,7 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: {
         accessToken: CONTENTFUL_ACCESS_TOKEN,
-        spaceId: CONTENTFUL_SPACEID,
+        spaceId: CONTENTFUL_SPACE_ID,
       },
     },
     "gatsby-plugin-styled-components",
