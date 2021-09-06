@@ -2,7 +2,7 @@ import * as React from "react";
 
 // markup
 const IndexPage = () => {
-  return <div>Welcome</div>;
+  return <div>Gatsby v3</div>;
 };
 
 export default IndexPage;
