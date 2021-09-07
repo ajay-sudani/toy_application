@@ -11,8 +11,9 @@ module.exports = {
     title: "Toy_Application",
   },
   plugins: [
+    "gatsby-plugin-loadable-components-ssr",
     {
-      resolve: `gatsby-plugin-typescript`,
+      resolve: "gatsby-plugin-typescript",
       options: {
         isTSX: true, // defaults to false
         jsxPragma: `jsx`, // defaults to "React"
