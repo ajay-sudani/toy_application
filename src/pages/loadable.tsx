@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import loadable from "@loadable/component";
-const ComponentA = loadable(() => import("../components/componentA/ComponentA"));
-const ComponentB = loadable(() => import("../components/componentB/ComponentB"));
+const ComponentA = loadable(() => import("../components/componentA/Componenta"));
+const ComponentB = loadable(() => import("../components/componentB/Componentb"));
 
 // markup
 const LoadablePage = () => {
