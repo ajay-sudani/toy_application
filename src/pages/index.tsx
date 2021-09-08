@@ -4,9 +4,9 @@ import { graphql, useStaticQuery } from "gatsby";
 // const ComponentA = loadable(
 //   () => import("../components/componentA/ComponentA")
 // );
-// const ComponentB = loadable(
-//   () => import("../components/componentB/componentB")
-// );
+const ComponentB = loadable(
+  () => import("../components/componentB/componentB")
+);
 const Toys = loadable(() => import("../components/toys/Toys"));
 import "../assets/styles/index.scss";
 
@@ -62,7 +62,7 @@ const IndexPage = () => {
           />
         </div>
         {/* <div>{hasComponentA ? <ComponentA></ComponentA> : null}</div> */}
-        {/* <div>{hasComponentB ? <ComponentB></ComponentB> : null}</div> */}
+        <div>{hasComponentB ? <ComponentB></ComponentB> : null}</div>
       </section>
       <section>
         <Toys data={data.allContentfulToy.edges}></Toys>
