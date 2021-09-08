@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import loadable from "@loadable/component";
-const ComponentA = loadable(() => import("../components/componenta/Componenta"));
-const ComponentB = loadable(() => import("../components/componentb/Componentb"));
+const TestDetails = loadable(() => import("../components/test-details/TestDetails"));
+const TestList = loadable(() => import("../components/test-list/TestList"));
 
 // markup
 const LoadablePage = () => {
@@ -13,7 +13,7 @@ const LoadablePage = () => {
       <section>
         <h3>Demo for loadable component</h3>
         <div>
-          <label>Component A</label>
+          <label>Test List Component</label>
           <input
             type="checkbox"
             onChange={(event) => {
@@ -22,7 +22,7 @@ const LoadablePage = () => {
           />
         </div>
         <div>
-          <label>Component B</label>
+          <label>Test Details Component</label>
           <input
             type="checkbox"
             onChange={(event) => {
@@ -30,8 +30,8 @@ const LoadablePage = () => {
             }}
           />
         </div>
-        <div>{hasComponentA ? <ComponentA></ComponentA> : null}</div>
-        <div>{hasComponentB ? <ComponentB></ComponentB> : null}</div>
+        <div>{hasComponentA ? <TestList></TestList> : null}</div>
+        <div>{hasComponentB ? <TestDetails></TestDetails> : null}</div>
       </section>
     </div>
   );
