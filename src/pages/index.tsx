@@ -61,7 +61,7 @@ const IndexPage = () => {
             }}
           />
         </div>
-        <div>{hasComponentA ? <ComponentA></ComponentA> : null}</div>
+        {/* <div>{hasComponentA ? <ComponentA></ComponentA> : null}</div> */}
         <div>{hasComponentB ? <ComponentB></ComponentB> : null}</div>
       </section>
       <section>
