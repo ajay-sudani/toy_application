@@ -1,6 +1,7 @@
 import React from "react";
+import loadable from "@loadable/component";
 import { graphql, useStaticQuery } from "gatsby";
-import Toys from "../components/toys/toys";
+const Toys = loadable(() => import("../components/toys/Toys"));
 import "../assets/styles/index.scss";
 
 // markup
