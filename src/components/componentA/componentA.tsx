@@ -1,13 +1,8 @@
 import * as React from "react";
-import "./ComponentA.scss";
 
 // markup
 const ComponentA = () => {
-  return (
-    <div className="main">
-      <span>This is ComponentA</span>
-    </div>
-  );
+  return <div>This is ComponentA</div>;
 };
 
 export default ComponentA;

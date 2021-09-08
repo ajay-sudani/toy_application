@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import loadable from "@loadable/component";
 import { graphql, useStaticQuery } from "gatsby";
+
 const ComponentA = loadable(
   () => import("../components/componentA/ComponentA")
 );
@@ -61,7 +62,7 @@ const IndexPage = () => {
             }}
           />
         </div>
-        {/* <div>{hasComponentA ? <ComponentA></ComponentA> : null}</div> */}
+        <div>{hasComponentA ? <ComponentA></ComponentA> : null}</div>
         <div>{hasComponentB ? <ComponentB></ComponentB> : null}</div>
       </section>
       <section>
