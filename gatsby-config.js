@@ -11,6 +11,7 @@ module.exports = {
     title: "Toy_Application",
   },
   plugins: [
+    "gatsby-plugin-sass",
     "gatsby-plugin-loadable-components-ssr",
     {
       resolve: "gatsby-plugin-typescript",
@@ -23,8 +24,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: CONTENTFUL_ACCESS_TOKEN,
         spaceId: CONTENTFUL_SPACE_ID,
+        accessToken: CONTENTFUL_ACCESS_TOKEN,
       },
     },
     "gatsby-plugin-styled-components",
