@@ -1,18 +1,16 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import React from "react";
 import { InView } from "react-intersection-observer";
-import "./ToyDetails.scss";
+import "./toy-details.scss";
 
 // markup
-const ToyDetails = ({ toy }) => {
+const ToyDetails = ({ pageContext }) => {
+  const toy = pageContext.data;
   return (
-    <div className="toy-content">
+    <div className="toy-details-container">
       <div className="image-container">
-        <Link to={`/toy-details/${toy.id}`}>
-          <InView>
-            <img src={toy.image.file.url} alt="No image found" />
-          </InView>
-        </Link>
+        <InView>
+          <img src={toy.image.file.url} alt="No image found" />
+        </InView>
       </div>
       <div className="details">
         <p className="price">

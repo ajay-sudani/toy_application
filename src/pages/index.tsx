@@ -1,14 +1,6 @@
-import React, { useState } from "react";
-import loadable from "@loadable/component";
+import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-
-const ComponentA = loadable(
-  () => import("../components/componentA/ComponentA")
-);
-const ComponentB = loadable(
-  () => import("../components/componentB/componentB")
-);
-const Toys = loadable(() => import("../components/toys/Toys"));
+import Toys from "../components/toys/toys";
 import "../assets/styles/index.scss";
 
 // markup
@@ -36,35 +28,9 @@ const IndexPage = () => {
     }
   `);
 
-  const [hasComponentA, setHasComponentA] = useState(false);
-  const [hasComponentB, setHasComponentB] = useState(false);
-
   return (
     <div className="container">
       <h1>Welcome to Gatsby v3 Toy</h1>
-      <section className="loadable">
-        <h3>Demo for loadable component</h3>
-        <div>
-          <label>Component A</label>
-          <input
-            type="checkbox"
-            onChange={(event) => {
-              setHasComponentA(event.target.checked);
-            }}
-          />
-        </div>
-        <div>
-          <label>Component B</label>
-          <input
-            type="checkbox"
-            onChange={(event) => {
-              setHasComponentB(event.target.checked);
-            }}
-          />
-        </div>
-        <div>{hasComponentA ? <ComponentA></ComponentA> : null}</div>
-        <div>{hasComponentB ? <ComponentB></ComponentB> : null}</div>
-      </section>
       <section>
         <Toys data={data.allContentfulToy.edges}></Toys>
       </section>
