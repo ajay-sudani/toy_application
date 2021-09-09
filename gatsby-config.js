@@ -1,7 +1,9 @@
 const path = require("path");
 const dotenv = require("dotenv");
 
-dotenv.config({ path: ".env" });
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
 
