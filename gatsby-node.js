@@ -8,14 +8,21 @@ exports.createPages = async function ({ actions, graphql }) {
           }
         }
       }
+      backgroundImage: file(relativePath: { eq: "bg.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED)
+        }
+      }
     }
   `);
 
-  data.allContentfulToy.edges.forEach((node) => {
+  const { allContentfulToy, backgroundImage } = data;
+
+  allContentfulToy.edges.forEach((node) => {
     actions.createPage({
       path: `toy-details/${node.node.id}`,
       component: require.resolve(`./src/templates/toy-details.tsx`),
-      context: { id: node.node.id },
+      context: { id: node.node.id, backgroundImage: backgroundImage },
     });
   });
 };

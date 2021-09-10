@@ -7,8 +7,8 @@ import { convertToBgImage } from "gbimage-bridge";
 import "./toy-details.scss";
 
 // markup
-const ToyDetails = ({ data }) => {
-  const imageData = convertToBgImage(getImage(data.backgroundImage));
+const ToyDetails = ({ data, pageContext }) => {
+  const imageData = convertToBgImage(getImage(pageContext.backgroundImage));
   const { contentfulToy: toy } = data;
 
   return (
@@ -48,11 +48,6 @@ export const query = graphql`
       }
       price
       rating
-    }
-    backgroundImage: file(relativePath: { eq: "bg.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
     }
   }
 `;
