@@ -15,7 +15,7 @@ const ToyDetails = ({ toy }) => {
         </Link>
       </div>
       <div className="details">
-        <p className="price">
+        <p className="name">
           <b>{toy.name}</b>
         </p>
         <p className="description">

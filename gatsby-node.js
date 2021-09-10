@@ -5,17 +5,6 @@ exports.createPages = async function ({ actions, graphql }) {
         edges {
           node {
             id
-            name
-            description {
-              raw
-            }
-            image {
-              file {
-                url
-              }
-            }
-            price
-            rating
           }
         }
       }
@@ -26,7 +15,7 @@ exports.createPages = async function ({ actions, graphql }) {
     actions.createPage({
       path: `toy-details/${node.node.id}`,
       component: require.resolve(`./src/templates/toy-details.tsx`),
-      context: { data: node.node },
+      context: { id: node.node.id },
     });
   });
 };

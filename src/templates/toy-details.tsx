@@ -1,10 +1,11 @@
 import React from "react";
+import { graphql } from "gatsby";
 import { InView } from "react-intersection-observer";
 import "./toy-details.scss";
 
 // markup
-const ToyDetails = ({ pageContext }) => {
-  const toy = pageContext.data;
+const ToyDetails = ({ data }) => {
+  const { contentfulToy: toy } = data;
   return (
     <div className="toy-details-container">
       <div className="image-container">
@@ -25,5 +26,23 @@ const ToyDetails = ({ pageContext }) => {
     </div>
   );
 };
+
+export const query = graphql`
+  query ($id: String!) {
+    contentfulToy(id: { eq: $id }) {
+      name
+      description {
+        raw
+      }
+      image {
+        file {
+          url
+        }
+      }
+      price
+      rating
+    }
+  }
+`;
 
 export default ToyDetails;
