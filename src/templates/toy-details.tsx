@@ -1,16 +1,18 @@
 import React from "react";
 import { InView } from "react-intersection-observer";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
+import { getImage } from "gatsby-plugin-image";
+import { convertToBgImage } from "gbimage-bridge";
 import "./toy-details.scss";
 
 // markup
 const ToyDetails = ({ data }) => {
-  const imageData = data.backgroundImage.childImageSharp.fluid;
+  const imageData = convertToBgImage(getImage(data.backgroundImage));
   const { contentfulToy: toy } = data;
 
   return (
-    <BackgroundImage Tag="section" fluid={imageData}>
+    <BackgroundImage {...imageData} alt="background image">
       <div className="toy-details-container">
         <div className="image-container">
           <InView>
@@ -49,9 +51,7 @@ export const query = graphql`
     }
     backgroundImage: file(relativePath: { eq: "bg.jpg" }) {
       childImageSharp {
-        fluid(quality: 90, maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(layout: FIXED)
       }
     }
   }
