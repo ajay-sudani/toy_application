@@ -14,7 +14,7 @@ const ToyDetails = ({ data }) => {
         </InView>
       </div>
       <div className="details">
-        <p className="price">
+        <p className="name">
           <b>{toy.name}</b>
         </p>
         <p className="description">
